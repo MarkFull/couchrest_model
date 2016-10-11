@@ -12,6 +12,11 @@ module CouchRest::Model
         super
       end
 
+      def recreate!
+        Thread.current[:couchrest_design_cache] = { }
+        super
+      end
+
     end
   end
 end
